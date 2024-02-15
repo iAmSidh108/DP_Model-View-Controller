@@ -9,6 +9,7 @@ public class TankView : MonoBehaviour
     private float movement;
     private float rotation;
     public Rigidbody rb;
+    public MeshRenderer[] childs;
 
     void Awake()
     {
@@ -50,7 +51,12 @@ public class TankView : MonoBehaviour
         return rb; 
     }
 
+    public void ChangeColor(Material color)
+    {
+        foreach (MeshRenderer child in childs)
+        {
+            child.material = color;
+        }
+    }
 
-
-    
 }
